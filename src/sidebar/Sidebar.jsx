@@ -2,10 +2,8 @@ import { faSlack } from '@fortawesome/free-brands-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState, useEffect } from 'react'
-import ApiKey from '../components/apiKey/apiKey'
-import UserTable from '../components/userTable/UserTable'
 import './Sidebar.css'
-import { fetchUserData, deleteUser, updateApiKey } from '../apiCalls/apiCalls';
+import { fetchUserData} from '../apiCalls/apiCalls';
 
 const Sidebar = ({ activeTab, onTabChange }) => {
   const [userData, setUserData] = useState([]);
