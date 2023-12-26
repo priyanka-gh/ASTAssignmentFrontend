@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../sidebar/Sidebar';
 import UserTable from '../userTable/UserTable';
 import PaginationButtons from '../paginationButtons/paginationButtons';
-import ApiKey from '../apiKey/apiKey';
+import ApiKey from '../apiKey/ApiKey';
 
 const Dashboard = () => {
   const navigate = useNavigate()
