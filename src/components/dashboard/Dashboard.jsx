@@ -6,9 +6,9 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../../sidebar/Sidebar';
-import ApiKey from '../apiKey/apiKey';
 import UserTable from '../userTable/UserTable';
 import PaginationButtons from '../paginationButtons/paginationButtons';
+import ApiKey from '../apiKey/apiKey';
 
 const Dashboard = () => {
   const navigate = useNavigate()
