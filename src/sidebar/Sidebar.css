@@ -1,0 +1,70 @@
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 30px;
+}
+
+.logoIcon{
+    color: #3498db;
+    font-size: 25px;
+}
+
+.activeTab{
+    background-color: #e6f2f9;
+    padding: 12px;
+    border-radius: 10px;
+    color: #3498db;
+    display: flex;
+    gap: 20px;
+}
+
+.notActive{
+    background-color: white;
+    padding: 12px;
+    border-radius: 10px;
+    color: #3498db;
+    display: flex;
+    gap: 20px;
+}
+.sidebar{
+    position: absolute;
+  left: 0;
+  height: max-content;
+  top: 0;
+  background-color: #fff;
+  width: 250px;
+  height: 100vh;
+}
+
+.insideSidebar{
+  margin: 30px;
+
+}
+
+@media screen and (max-width: 1089px) 
+{
+    .sidebar{
+        display: flex;
+        flex-direction: row;
+        max-height: 4rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .insideSidebar{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .activeTab{
+        padding: 10px;
+    }
+    .notActive{
+        padding: 0;
+    }
+}
