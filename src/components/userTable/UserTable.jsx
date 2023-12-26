@@ -31,7 +31,7 @@ const UserTable = ({userData}) => {
           </tr>
         </thead>
         <tbody>
-          {userData.map((user, index) => (
+          {userData?.map((user, index) => (
             <tr key={index}>
               <td>{user.fullName}</td>
               <td>{user.isBlocked ? 'Yes' : 'No'}</td>
