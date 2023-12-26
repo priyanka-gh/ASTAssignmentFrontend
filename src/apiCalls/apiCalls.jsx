@@ -1,27 +1,26 @@
+const BACKEND_URL = "https://ast-assignment.onrender.com"
+
 export const fetchUserData = async (page) => {
     try {
-      const response = await fetch(`http://localhost:3000/users?page=${page}&pageSize=10`);
+      const response = await fetch(`${BACKEND_URL}/users?page=${page}&pageSize=10`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       const data = await response.json();
-      console.log("Response Data:", data);
       return data;
     } catch (error) {
       console.error('Error fetching data:', error);
-      throw error;
     }
   };
   
   export const deleteUser = async (telegramId) => {
     try {
-      const response = await fetch(`http://localhost:3000/users/${telegramId}`, {
+      const response = await fetch(`${BACKEND_URL}/users/${telegramId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      console.log("User deleted successfully");
       window.location.reload();
     } catch (error) {
       console.error('Error deleting user:', error);
@@ -31,13 +30,12 @@ export const fetchUserData = async (page) => {
 
   export const blockUser = async (telegramId) => {
     try {
-      const response = await fetch(`http://localhost:3000/users/${telegramId}/block`, {
+      const response = await fetch(`${BACKEND_URL}/users/${telegramId}/block`, {
         method: 'PATCH',
       });
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-      console.log("User blocked successfully");
       window.location.reload();
     } catch (error) {
       console.error('Error blocking user:', error);
@@ -47,7 +45,7 @@ export const fetchUserData = async (page) => {
   
   export const updateApiKey = async (newApiKey) => {
     try {
-      const response = await fetch('http://localhost:3000/config', {
+      const response = await fetch(`${BACKEND_URL}/config`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -59,7 +57,6 @@ export const fetchUserData = async (page) => {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
   
-      console.log('API key updated successfully');
     } catch (error) {
       console.error('Error updating API key:', error);
       throw error;
@@ -69,12 +66,11 @@ export const fetchUserData = async (page) => {
 
   export const fetchAllUsers = async () => {
     try {
-      const response = await fetch('http://localhost:3000/users/all');
+      const response = await fetch(`${BACKEND_URL}/users/all`);
       const data = await response.json();
       const totalUsers = data.length;
       const pageSize = 10;
       const totalPages = Math.ceil(totalUsers / pageSize);
-      console.log("to",totalPages)
       return totalPages;
     } catch (error) {
       console.error('Error fetching all users:', error);

@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import { fetchAllUsers, fetchUserData } from '../../apiCalls/apiCalls';
 import "./paginationButtons.css"
-import { faBackward, faForward, faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PaginationButtons = ({ updateUserData }) => {

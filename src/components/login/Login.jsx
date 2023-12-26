@@ -17,7 +17,7 @@ const Login = () => {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      console.log('User state changed:', user);
+      ('User state changed:', user);
     });
 
     return () => unsubscribe();
@@ -27,8 +27,7 @@ const Login = () => {
     const fetch = async () => {
       setLoading(true);
       const result = await getRedirectResult(auth);
-      if (result.user) {
-        console.log("Successfully signed in with Google", result.user);
+      if (result?.user) {
         navigate("/dashboard");
       } else {
         console.error("User not signed in");

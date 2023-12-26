@@ -18,7 +18,6 @@ const Dashboard = () => {
   const logOut = async () => {
     try {
       await signOut(auth);
-      console.log("User signed out successfully");
       navigate("/");
     } catch (err) {
       console.error("Error during sign-out:", err);
