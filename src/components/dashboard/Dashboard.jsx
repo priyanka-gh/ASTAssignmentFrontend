@@ -15,14 +15,6 @@ const Dashboard = () => {
   const [activeTab, setActiveTab] = useState('table');
   const [userData, setUserData] = useState([]);
 
-  const logOut = async () => {
-    try {
-      await signOut(auth);
-      navigate("/");
-    } catch (err) {
-      console.error("Error during sign-out:", err);
-    }
-  };
 
   const updateUserData = (newUserData) => {
     setUserData(newUserData);
@@ -31,21 +23,21 @@ const Dashboard = () => {
 
   return (
     <div className='dashboard'>
-      <button className='offBtn'>
-        <FontAwesomeIcon className='offBtnIcon' icon={faPowerOff} onClick={logOut} />
-      </button>
-      <div className='dashboard_container'>
-        <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
-        <div className='userTable'>
-          {activeTab === 'update' ? (
-            <ApiKey />
-          ) : (
-            <UserTable userData={userData} />
-          )}
+        <div className='sidebarContainer'>
+          <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+          <h3 className='hey'>Hey There 👋  </h3>
         </div>
-        <PaginationButtons updateUserData={updateUserData} />
+        <div className='rightSide'>
+          <div className='dashboardContainer'>
+            {activeTab === 'update' ? (
+              <ApiKey />
+            ) : (
+              <UserTable userData={userData} />
+            )}
+          </div>
+          <PaginationButtons updateUserData={updateUserData} />
+        </div>
       </div>
-    </div>
   );
 };
 

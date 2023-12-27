@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 .login-btn {
-  background: linear-gradient(45deg, #f4b4ae, #2196F3);
+  background: linear-gradient(45deg, #9EC1A3, #40798C);
   color: #fff;
   border: none;
   padding: 20px 25px;
@@ -18,7 +18,7 @@
 }
 
 .login-btn:hover {
-  background: linear-gradient(360deg, #2196F3, #f4b4ae);
+  background: linear-gradient(360deg, #40798C, #9EC1A3);
   box-shadow: 10vh 10vh 10vh 10vh rgba(0, 0, 0, 0);
 }
 
@@ -32,14 +32,14 @@
   }
 
   .loginPage{
-    background-color: #212b32;
+    background-color: #1F363D;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family: 'Inter', sans-serif;
-    color: white;
-    gap: 40px;
+    gap: 20px;
   }
 
   .login-container{
@@ -48,14 +48,20 @@
     gap: 20px;
     width: 30%;
     pad: 10px;
+    align-self: center;
+    align-items: center;
   }
 
   h1{
     font-size: 32px;
+    color: #eef3ea;
+
   }
 
   p{
     font-size: 20px;
+    color: #c9d4c0;
+    text-align: center;
   }
 
   .LoginLogo{
@@ -63,9 +69,9 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    position: absolute;
-    top: 5%;
-    left: 5%;
+    position: relative;
+    color: #eef3ea;
+
   }
   .LoginlogoIcon{
     color: #2196F3;

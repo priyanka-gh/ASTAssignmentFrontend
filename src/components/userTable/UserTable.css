@@ -1,27 +1,30 @@
 table {
-    margin-top: 2rem;
     border-collapse: collapse;
     font-family: 'Inter', sans-serif;
-    width: 65vw;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
   }
   
   th, td {
-    border: 1px solid #ddd; /* Add borders to th and td */
-    padding: 13px;
+    padding: 14px;
   }
   
   th {
-    background-color: #ded6d6;
-    color: #fff;
+    background-color: rgb(243 244 246);
+    color: gray;
     text-align: left;
+    font-size: 12px;
   }
   
   tr {
     transition: background-color 0.3s;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
+    color: #1F363D;
+    font-size: 14px;
+    font-weight: bold;
+
+    background-color: white;
+    border: 1px solid rgb(229 231 235); /* Add borders to th and td */
   }
   
   .icon {
@@ -45,6 +48,25 @@ table {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .active, .unblocked{
+    background-color: rgb(209, 242, 209);
+    color: rgb(62, 100, 5);
+  }
+
+  .inactive, .blocked{
+    background-color: rgb(249, 211, 211);
+    color: rgb(132, 5, 5);
+  }
+
+  .bullet{
+    width: fit-content;
+    padding-right: 6px;
+    padding-left: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 10px;
   }
 @media screen and (max-width: 1089px) 
   {

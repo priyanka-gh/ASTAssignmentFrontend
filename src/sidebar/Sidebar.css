@@ -8,14 +8,13 @@
 
 .logoIcon{
     color: #3498db;
-    font-size: 25px;
+    font-size: 26px;
 }
 
 .activeTab{
     background-color: #e6f2f9;
     padding: 12px;
     border-radius: 10px;
-    color: #3498db;
     display: flex;
     gap: 20px;
 }
@@ -24,25 +23,43 @@
     background-color: white;
     padding: 12px;
     border-radius: 10px;
-    color: #3498db;
     display: flex;
     gap: 20px;
 }
 .sidebar{
-    position: absolute;
-  left: 0;
   height: max-content;
-  top: 0;
   background-color: #fff;
-  width: 250px;
+  width: 350px;
   height: 100vh;
-}
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  color: #556066;
 
+
+}
 .insideSidebar{
-  margin: 30px;
-
+    padding: 2rem;
 }
 
+.logoutContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #556066;
+    font-size: 16px;
+    cursor: pointer;
+}
+.logout {
+    transform: scaleX(-1);
+  }
+.logoutBtn:hover{
+    background-color: #91afc1;
+    color: #1F363D;
+}
 @media screen and (max-width: 1089px) 
 {
     .sidebar{

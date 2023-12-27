@@ -1,9 +1,6 @@
 
 
 .paginationButtons{
-  position: fixed;
-  bottom: 2rem;
-  right: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,4 +15,8 @@
   background-color: #ccc;
   color: white;
 
+}
+
+span{
+  color: black;
 }

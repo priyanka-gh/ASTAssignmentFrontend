@@ -19,23 +19,23 @@ const UserTable = ({userData}) => {
       }
 
   return (
-    <div className='tableContainer'>
+    // <div className='tableContainer'>
         <table>
         <thead>
           <tr>
-            <th>Full Name</th>
-            <th>Is Blocked</th>
-            <th>Is Subscribed</th>
-            <th>User Name</th>
-            <th>Actions</th>
+            <th>FULL NAME</th>
+            <th>BLOCKED STATUS</th>
+            <th>SUBSCRIPTION STATUS</th>
+            <th>USERNAME</th>
+            <th>ACTIONS</th>
           </tr>
         </thead>
         <tbody>
           {userData?.map((user, index) => (
             <tr key={index}>
               <td>{user.fullName}</td>
-              <td>{user.isBlocked ? 'Yes' : 'No'}</td>
-              <td>{user.isSubscribed ? 'Yes' : 'No'}</td>
+              <td><div className={user.isBlocked ? 'blocked bullet':'unblocked bullet'}>{user.isBlocked ? 'Blocked' : 'Not Blocked'}</div></td>
+              <td><div className={user.isSubscribed ? 'active bullet' : 'inactive bullet'}>{user.isSubscribed ? 'Active' : 'Inactive'}</div></td>
               <td>{user.userName}</td>
               <td>
                 <div className='icons'>
@@ -47,7 +47,7 @@ const UserTable = ({userData}) => {
           ))}
         </tbody>
       </table>
-    </div>
+    // </div>
   )
 }
 
