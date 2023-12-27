@@ -5,21 +5,18 @@ import { deleteUser, blockUser } from '../../apiCalls/apiCalls';
 import "./UserTable.css"
 
 const UserTable = ({userData}) => {
-    const handleDeleteUser = (telegramId) => {
-        deleteUser(telegramId)
-          .catch(error => console.error('Error deleting user:', error));
-        window.location.reload()
-      };
-    
-      const handleBlockUser = (telegramId) => {
-        blockUser(telegramId)
-        .catch(error => console.error('Error blocking user:', error));
-        window.location.reload()
 
-      }
+  const handleDeleteUser = (telegramId) => {
+      deleteUser(telegramId)
+        .catch(error => console.error('Error deleting user:', error));
+  };
+    
+  const handleBlockUser = (telegramId) => {
+    blockUser(telegramId)
+    .catch(error => console.error('Error blocking user:', error));
+  }
 
   return (
-    // <div className='tableContainer'>
         <table>
         <thead>
           <tr>
@@ -36,7 +33,7 @@ const UserTable = ({userData}) => {
               <td>{user.fullName}</td>
               <td><div className={user.isBlocked ? 'blocked bullet':'unblocked bullet'}>{user.isBlocked ? 'Blocked' : 'Not Blocked'}</div></td>
               <td><div className={user.isSubscribed ? 'active bullet' : 'inactive bullet'}>{user.isSubscribed ? 'Active' : 'Inactive'}</div></td>
-              <td>{user.userName}</td>
+              <td>{user.userName || 'N/A'}</td>
               <td>
                 <div className='icons'>
                   <FontAwesomeIcon className='icon' icon={faTrash} onClick={() => handleDeleteUser(user.telegramId)}/>
@@ -47,7 +44,6 @@ const UserTable = ({userData}) => {
           ))}
         </tbody>
       </table>
-    // </div>
   )
 }
 

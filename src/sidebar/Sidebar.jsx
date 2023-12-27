@@ -27,11 +27,6 @@ const Sidebar = ({ activeTab, onTabChange }) => {
     }
   };
 
-  useEffect(() => {
-    fetchUserData()
-      .then(data => setUserData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
 
   return (
     <div className='sidebar'>

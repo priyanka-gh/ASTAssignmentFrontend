@@ -64,16 +64,3 @@ export const fetchUserData = async (page) => {
     }
   };
   
-
-  export const fetchAllUsers = async () => {
-    try {
-      const response = await fetch(`${BACKEND_URL}/users/all`);
-      const data = await response.json();
-      const totalUsers = data.length;
-      const pageSize = 10;
-      const totalPages = Math.ceil(totalUsers / pageSize);
-      return totalPages;
-    } catch (error) {
-      console.error('Error fetching all users:', error);
-    }
-  };
